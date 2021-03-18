@@ -1,0 +1,111 @@
+body {
+  display: block;
+  background-color: #117358;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-block-start: 50px;
+  margin-block-end: 50px;
+}
+
+.mainRectangular {
+  background: white;
+  height: 800px;
+  width: 430px;
+  margin: auto;
+  border-radius: 6px;
+}
+
+.modelPhoto {
+  text-align: center;
+  position: relative;
+  top: -780px;
+}
+
+h2 {
+  color: #117358;
+}
+
+.actLv {
+  margin: auto;
+  text-align: center;
+  border-top: solid rgb(189, 189, 189) 1px;
+  width: 400px;
+  position: relative;
+  top: -770px;
+}
+
+#personalInfo {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: -780px;
+}
+
+.profile-grid {
+  margin: auto;
+  width: 390px;
+  padding: 20px;
+  height: 90px;
+  background: #ececec;
+  position: relative;
+  top: -750px;
+}
+
+.mail-grid {
+  margin: auto;
+  float: left;
+  border-right: 1px solid black;
+  width: 33%;
+  text-align: center;
+}
+
+.case-grid {
+  margin: auto;
+  float: left;
+  border-right: 1px solid black;
+  width: 33%;
+  text-align: center;
+}
+
+.man-grid {
+  margin: auto;
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
+.social-grid {
+  margin: auto;
+  width: 200px;
+  position: relative;
+  top: -700px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0px 8px;
+}
+
+.follow-btn {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.follow-btn a {
+  background: #11b771;
+  color: white;
+  text-align: center;
+  padding: 10px 50px;
+  margin: auto;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.follow-btn a:hover {
+  background: #3b3a3a;
+}
