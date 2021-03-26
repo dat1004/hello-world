@@ -42,7 +42,7 @@ class UI {
     row.innerHTML = `
     <span>${cafe.name}</span>
     <span>${cafe.city}</span>
-    <div class="delete" data-index="${index}">x</div>
+    <div class="delete" data-index-number="${index}">x</div>
     `;
 
     list.appendChild(row);
@@ -79,7 +79,8 @@ class Store {
 
   static removeCafe(target) {
     const cafes = Store.getCafes();
-    const index = target.dataset.index;
+
+    const index = target.dataset.indexNumber;
     console.log(target);
     console.log(index);
     cafes.splice(index, 1);
@@ -99,12 +100,13 @@ document.querySelector("#add-cafe-form").addEventListener("submit", (e) => {
   //get form value
   let name = document.querySelector("#name").value;
   let city = document.querySelector("#city").value;
-
+  let index = Store.getCafes().length;
+  console.log("NINH ", index);
   //instatiate cafe
   const cafe = new Cafe(name, city);
 
   //add cafe to UI
-  UI.addCafeToList(cafe);
+  UI.addCafeToList(cafe, index);
 
   //add cafe to localstorage
   Store.addCafe(cafe);
