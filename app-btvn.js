@@ -33,16 +33,16 @@ class UI {
     // ];
     const cafes = Store.getCafes();
 
-    cafes.forEach((cafe) => UI.addCafeToList(cafe));
+    cafes.forEach((cafe, index) => UI.addCafeToList(cafe, index));
   }
-  static addCafeToList(cafe) {
+  static addCafeToList(cafe, index) {
     const list = document.querySelector("#cafe-list");
 
     const row = document.createElement("li");
     row.innerHTML = `
     <span>${cafe.name}</span>
     <span>${cafe.city}</span>
-    <div class="delete">x</div>
+    <div class="delete" data-index="${index}">x</div>
     `;
 
     list.appendChild(row);
@@ -77,9 +77,13 @@ class Store {
     localStorage.setItem("cafes", JSON.stringify(cafes));
   }
 
-  static removeCafe() {
+  static removeCafe(target) {
     const cafes = Store.getCafes();
-    cafes.pop();
+    const index = target.dataset.index;
+    console.log(target);
+    console.log(index);
+    cafes.splice(index, 1);
+
     localStorage.setItem("cafes", JSON.stringify(cafes));
   }
 }
@@ -113,7 +117,7 @@ document.querySelector("#add-cafe-form").addEventListener("submit", (e) => {
 document.querySelector("#cafe-list").addEventListener("click", (e) => {
   //Remove cafe in UI
   UI.deleteCafe(e.target);
-
+  console.dir(e.target);
   //Remove cafe in storage
   Store.removeCafe(e.target);
 });
